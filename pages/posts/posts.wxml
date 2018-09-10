@@ -1,31 +1,23 @@
 <!--pages/posts.wxml-->
-<view>
-    <swiper indicator-dots='true' indicator-active-color='#235569' autoplay='true' interval='2000' circular='true' >
-        <swiper-item>
-            <image src='/images/wx.png'></image>
-        </swiper-item>
-        <swiper-item>
-            <image src='/images/vr.png'></image>
-        </swiper-item>
-        <swiper-item>
-            <image src='/images/iqiyi.png'></image>
-        </swiper-item>
-    </swiper>
+<import src="posts-item/posts-item-template"/>
 
-    <view class='post-container'>
-        <view class='post-author-date'>
-            <image class='post-author'  src='/images/avatar/1.png'></image>
-            <text class='post-date'>Nov 25 2018</text>
-        </view>  
-        <text class='post-title'>正是虾肥蟹壮时</text>
-        <image class='post-image' src='/images/post/crab.png'></image>
-        <text class='post-content'>这是文章的正文，哇哦，虾好肥啊蟹好壮啊，怎么吃啊，要去网上搜索阳澄湖大闸蟹的做法吗，真的是好期待好想吃啊啊啊啊啊。清蒸还是爆炒，这是一个问题。</text>
-        <view class='post-like'>
-            <image class='post-like-image' src='../../images/icon/chat.png'></image>
-            <text class='post-like-font'>24</text>
-            <image class='post-like-image' src='../../images/icon/view.png'></image>
-            <text class='post-like-font'>75</text>
-        </view>
+<view>
+  <swiper indicator-dots='true' indicator-active-color='#235569' autoplay='true' interval='2000' circular='true'>
+    <swiper-item>
+      <image src='/images/wx.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/vr.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/iqiyi.png'></image>
+    </swiper-item>
+  </swiper>
+
+  <block wx:for="{{post_key}}">
+    <view  catchtap='onPostTap' data-postid='{{item.postId}}'>
+       <template is="postItem" data="{{...item}}" />
     </view>
+  </block>
 
 </view>

@@ -1,5 +1,5 @@
-// pages/posts.js
-let postdata=require('../../post-data/post-data.js')
+// pages/posts/posts-detail/posts-detail.js
+let postdata = require('../../../post-data/post-data.js')
 
 Page({
 
@@ -7,75 +7,67 @@ Page({
    * 页面的初始数据
    */
   data: {
-
-
-  },
-
-  onPostTap:function(event){
-    let postID = event.currentTarget.dataset.postid;
-    wx.navigateTo({
-      url: 'posts-detail/posts-detail?id=' + postID
-    })
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-   
-
+  onLoad: function (options) {
+    let postid = options.id;
     this.setData({
-      post_key: postdata.postlist
+      article:postdata.postlist[postid]
     })
-
+    
+   
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-
+  onReady: function () {
+  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-
+  onShow: function () {
+  
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
-
+  onHide: function () {
+  
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
-
+  onUnload: function () {
+  
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
-
+  onPullDownRefresh: function () {
+  
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
-
+  onReachBottom: function () {
+  
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
-
+  onShareAppMessage: function () {
+  
   }
 })
