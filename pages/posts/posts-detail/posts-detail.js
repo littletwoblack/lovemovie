@@ -18,6 +18,8 @@ Page({
     this.setData({
       article:postdata.postlist[postid]
     })
+
+    wx.setStorageSync("游戏名称", {gamename:"风暴英雄",dve:"暴雪游戏"})
     
    
   },
